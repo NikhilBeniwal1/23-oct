@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:planmytrip/app_routes.dart';
 
 import 'Home_page.dart';
 
@@ -15,9 +16,8 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 2), () {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const MyHomePage()));
+    Timer(const Duration(seconds: 1), () {
+      Navigator.pushReplacementNamed(context, AppRoutes.homePage);
     });
   }
 

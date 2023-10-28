@@ -12,29 +12,62 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Planing My Trip'),
-        centerTitle: true,
-      ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.red.shade300,
-        child: Center(
-          child: ElevatedButton(
+        backgroundColor: Colors.green.shade200,
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: const Text('Planing My Trip'),
+          centerTitle: true,
+        ),
+        body: ListView.builder(
+            itemCount: 20,
+            itemBuilder: (context, index) {
+              return Container(
+                width: double.infinity,
+                height: 100,
+                child: InkWell(
+                    onTap: () {
+                      var Mname = nameController.text.toString();
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  InfoPage(index: index + 1)));
+                    },
+                    child: Container(
+                      child: Center(
+                        child: Text(
+                          "${index + 1}",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                    )),
+              );
+            })
+
+        /*Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextField(
+            controller: nameController,
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
             onPressed: () {
+              var Mname = nameController.text.toString();
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const InfoPage();
+                return InfoPage(Name: Mname);
               }));
             },
             child: const Text("Info page"),
           ),
-        ),
-      ),
-    );
+        ],
+      ),*/
+        );
   }
 }
