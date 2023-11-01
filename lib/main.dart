@@ -6,8 +6,6 @@ import 'package:planmytrip/splash_page.dart';
 import 'Home_page.dart';
 import 'app_routes.dart';
 
-// 23 oct    40:32
-
 void main() {
   runApp(const MyApp());
 }
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: AppRoutes.homePage,
+      initialRoute: AppRoutes.splashPage,
       // home: const SplashPage(),
       routes: AppRoutes.myRoutes(),
     );

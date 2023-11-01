@@ -16,7 +16,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 1), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacementNamed(context, AppRoutes.homePage);
     });
   }
@@ -31,7 +31,7 @@ class _SplashPageState extends State<SplashPage> {
           children: [
             Icon(
               Icons.tour,
-              size: 60,
+              size: 50,
             ),
             SizedBox(
               height: 20,
